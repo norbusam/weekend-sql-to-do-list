@@ -11,7 +11,8 @@ router.get('/', (req, res)=>{
 
 //POST
 router.post('/', (req, res)=>{
-    
+    console.log('POST ROUTE');
+    res.sendStatus(200);
 })
 
 //PUT
