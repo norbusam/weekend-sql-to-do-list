@@ -8,6 +8,8 @@ app.use(express.static('server/public'));
 app.use(bodyParser.urlencoded({extended: true}));
 
 
+let taskRouter = require('./routes/task_routes')
+app.use('/tasks', taskRouter)
 
 app.listen(port, ()=>{
     console.log('Spun up at port:', port);
