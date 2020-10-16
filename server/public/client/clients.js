@@ -12,16 +12,16 @@ function addTask(){
     console.log('task added');
     let task = $('#taskIn').val();
     console.log('task to be added', task);
-    $.ajax({
-        method: 'POST',
-        url: '/tasks',
-        data: task
-    }).then(function(response){
-        console.log('back from server POST', response);
-        // getTask();
-    }).catch(function(err){
-        console.log('error in POST server', error);
-    })
+    // $.ajax({
+    //     method: 'POST',
+    //     url: '/tasks',
+    //     data: task
+    // }).then(function(response){
+    //     console.log('back from server POST', response);
+    //     // getTask();
+    // }).catch(function(err){
+    //     console.log('error in POST server', error);
+    // })
 }// end addTask
 
 function getTask(){
