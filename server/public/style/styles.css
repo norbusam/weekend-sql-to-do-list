@@ -10,3 +10,8 @@ div {
 h1 {
     justify-content: center;
 }
+
+.done {
+    text-decoration: line-through;
+    color: red;
+}

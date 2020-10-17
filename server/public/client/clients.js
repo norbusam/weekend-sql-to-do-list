@@ -74,6 +74,7 @@ function getTask(){
     }).then(function(response){
         console.log('back from server GET', response);
         for (let task of response) {
+            if(`${task.completed}` == 'false'){
             el.append(`
                 <tr data-id=${task.id}>
                     <td>${task.name}</td>
@@ -81,7 +82,16 @@ function getTask(){
                     <td><input data-complete=${task.completed} type="checkbox" class="completed" value=${task.completed}/></td>
                     <td><button class="deleteBtn">Delete</button></td>
                 </tr>
+            `);} else {
+                el.append(`
+                    <tr class="done" data-id=${task.id}>
+                        <td>${task.name}</td>
+                        <td>${task.description}</td>
+                        <td><p class= "done" >Completed</p></td>
+                        <td><button class="deleteBtn">Delete</button></td>
+                    </tr>
             `);
+            }
         }//end loop
     }).catch(function(err){
         console.log('error in GET server', error);
