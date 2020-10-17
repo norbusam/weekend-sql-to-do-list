@@ -2,16 +2,58 @@ body {
     background-color:skyblue;
 }
 
-div {
-    display: inline-flexbox;
-    align-items: center;
+.container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #333;
+    height: 90vh;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    overflow-y: auto;
 }
 
 h1 {
-    justify-content: center;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 80px;
+    opacity: 0.5;
 }
 
 .done {
     text-decoration: line-through;
     color: red;
+}
+
+table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    border: 3px solid purple;
+}
+
+thead th:nth-child(1) {
+    width: 30%;
+}
+  
+thead th:nth-child(2) {
+    width: 20%;
+}
+  
+thead th:nth-child(3) {
+    width: 15%;
+}
+  
+thead th:nth-child(4) {
+    width: 35%;
+}
+  
+th, td {
+    padding: 20px;
+}
+
+.deleteBtn:hover{
+    background-color: red;
 }
