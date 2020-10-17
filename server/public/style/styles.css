@@ -2,7 +2,7 @@ body {
     background-color:skyblue;
 }
 
-.container {
+/* .container {
     width: 100%;
     max-width: 500px;
     margin: 0 auto;
@@ -13,7 +13,7 @@ body {
     margin-top: 5vh;
     margin-bottom: 5vh;
     overflow-y: auto;
-}
+} */
 
 h1 {
     text-align: center;

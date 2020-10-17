@@ -88,7 +88,7 @@ function getTask(){
                         <td>${task.name}</td>
                         <td>${task.description}</td>
                         <td><p>Completed</p></td>
-                        <td><button class="deleteBtn">Delete</button></td>
+                        <td><button class="deleteBtn btn btn-light">Delete</button></td>
                     </tr>
             `);
             }
