@@ -5,7 +5,8 @@ $(document).ready(onReady);
 function onReady() {
     console.log('JQ loaded');
     $('#addTask').on('click', addTask);
-    $('#taskOutput').on('click', '.deleteBtn', deleteTask)
+    $('#taskOutput').on('click', '.deleteBtn', deleteTask);
+    $('#taskOutput').on('click', '.completed', completeTask);
     getTask();
 }// end onReady
 
@@ -30,6 +31,10 @@ function addTask(){
     $('#nameIn').val('');
     $('#descriptionIn').val('');
 }// end addTask
+
+function completeTask(){
+    console.log('completed');
+}
 
 function deleteTask() {
     let taskId = $(this).closest('tr').data('id');
@@ -59,7 +64,7 @@ function getTask(){
                 <tr data-id=${task.id}>
                     <td>${task.name}</td>
                     <td>${task.description}</td>
-                    <td><input type="checkbox" id="completed" value=${task.completed}/></td>
+                    <td><input type="checkbox" class="completed" value=${task.completed}/></td>
                     <td><button class="deleteBtn">Delete</button></td>
                 </tr>
             `);
