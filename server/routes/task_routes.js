@@ -19,7 +19,7 @@ router.get('/', (req, res)=>{
 router.post('/', (req, res)=>{
     let task = req.body;
     let queryText = `INSERT INTO "tasks"("name", "description")
-    VALUES($1, $2);`
+    VALUES($1, $2);`;
     pool.query(queryText, [task.name, task.description])
             .then(()=>{
                 res.sendStatus(200);
@@ -35,8 +35,15 @@ router.put('/', (req, res)=>{
 })
 
 //DELETe
-router.delete('/', (req, res)=>{
-    
+router.delete('/:id', (req, res)=>{
+    let id = req.params.id;
+    let queryText = `DELETE FROM "tasks" WHERE "id" = $1;`;
+    pool.query(queryText, [id]).then((result)=>{
+        res.sendStatus(200);
+    }).catch((err)=>{
+        console.log('error in DELETE pg', err);
+        res.sendStatus(500);
+    })
 })
 
 module.exports = router;

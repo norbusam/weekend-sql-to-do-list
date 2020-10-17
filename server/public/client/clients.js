@@ -32,7 +32,17 @@ function addTask(){
 }// end addTask
 
 function deleteTask() {
-    console.log('deleted');
+    let taskId = $(this).closest('tr').data('id');
+    console.log('deleted with the id of:', taskId);
+    $.ajax({
+        method: 'DELETE',
+        url: `/tasks/${taskId}`
+    }).then(function(response){
+        console.log('back from DELETE', response);
+        getTask();
+    }).catch(function(err){
+        console.log('error getting in DELETE serer', err);
+    })//end ajax
 }//end deleteTask
 
 function getTask(){
@@ -46,7 +56,7 @@ function getTask(){
         console.log('back from server GET', response);
         for (let task of response) {
             el.append(`
-                <tr>
+                <tr data-id=${task.id}>
                     <td>${task.name}</td>
                     <td>${task.description}</td>
                     <td><input type="checkbox" id="completed" value=${task.completed}/></td>
@@ -56,5 +66,5 @@ function getTask(){
         }//end loop
     }).catch(function(err){
         console.log('error in GET server', error);
-    })
+    })//end ajax
 }//end getTask
