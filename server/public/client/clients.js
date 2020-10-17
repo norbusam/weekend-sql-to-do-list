@@ -5,6 +5,7 @@ $(document).ready(onReady);
 function onReady() {
     console.log('JQ loaded');
     $('#addTask').on('click', addTask);
+    $('#taskOutput').on('click', '.deleteBtn', deleteTask)
     getTask();
 }// end onReady
 
@@ -29,6 +30,10 @@ function addTask(){
     $('#nameIn').val('');
     $('#descriptionIn').val('');
 }// end addTask
+
+function deleteTask() {
+    console.log('deleted');
+}//end deleteTask
 
 function getTask(){
     let el = $('#taskOutput');
