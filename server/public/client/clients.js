@@ -87,7 +87,7 @@ function getTask(){
                     <tr class="done" data-id=${task.id}>
                         <td>${task.name}</td>
                         <td>${task.description}</td>
-                        <td><p class= "done" >Completed</p></td>
+                        <td><p>Completed</p></td>
                         <td><button class="deleteBtn">Delete</button></td>
                     </tr>
             `);
