@@ -1,8 +1,9 @@
 body {
     background-color:skyblue;
+    font-family: 'Chilanka', cursive;
 }
 
-.container {
+/* .container {
     width: 100%;
     max-width: 500px;
     margin: 0 auto;
@@ -13,7 +14,7 @@ body {
     margin-top: 5vh;
     margin-bottom: 5vh;
     overflow-y: auto;
-}
+} */
 
 h1 {
     text-align: center;
@@ -51,7 +52,7 @@ thead th:nth-child(4) {
 }
   
 th, td {
-    padding: 20px;
+    padding: 10px;
 }
 
 .deleteBtn:hover{

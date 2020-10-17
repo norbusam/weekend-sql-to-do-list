@@ -11,6 +11,9 @@ function onReady() {
 }// end onReady
 
 function addTask(){
+    if($('#nameIn').val() == '' || $('#descriptionIn').val() == ''){
+        alert('Please add Task and description');
+    }
     console.log('task added');
     let task = {
         name: $('#nameIn').val(),
@@ -88,7 +91,7 @@ function getTask(){
                         <td>${task.name}</td>
                         <td>${task.description}</td>
                         <td><p>Completed</p></td>
-                        <td><button class="deleteBtn">Delete</button></td>
+                        <td><button class="deleteBtn btn btn-light">Delete</button></td>
                     </tr>
             `);
             }
