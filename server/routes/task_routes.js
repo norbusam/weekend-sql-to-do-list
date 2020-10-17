@@ -5,14 +5,19 @@ const pool = require('../modules/pool')
 
 //GET
 router.get('/', (req, res)=>{
-    console.log('in server GET');
-    res.sendStatus(200)
+    let queryText = `SELECT * FROM "tasks";`;
+    pool.query(queryText).then((result)=>{
+        console.log('back from DB', result.rows);
+        res.send(result.rows)
+    }).catch((err)=>{
+        console.log('error in DB get', err);
+    })
 })
 
 //POST
 router.post('/', (req, res)=>{
-    console.log('POST ROUTE');
-    res.sendStatus(200);
+    // let queryText
+    
 })
 
 //PUT

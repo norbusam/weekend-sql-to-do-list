@@ -11,22 +11,23 @@
 <body>
     <h1>ToDo List</h1>
     <div>
-        <label for="taskName">Task</label>
-        <input type="text" name="enter task" id="taskIn">
+        <label for="name">Name</label>
+        <input type="text" placeholder="Name" id="taskIn">
+        <label for="taskName">Description</label>
+        <input type="text" placeholder="Description" id="descriptionIn">
         <button id="addTask">Add Task</button>
     </div>
     <div>
         <table>
             <thead>
                 <th>Task Name</th>
+                <th>Description</th>
                 <th>Completed</th>
                 <th>Delete</th>
             </thead>
-                <tr>
-                    <td>Do laundry</td>
-                    <td><input type="checkbox"></td>
-                    <td><button>delete</button></td>
-                </tr>
+                <tbody id="taskOutput">
+                    
+                </tbody>
         </table>
     </div>
 </body>
