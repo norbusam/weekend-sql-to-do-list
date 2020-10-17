@@ -6,3 +6,7 @@ div {
     display: inline-flexbox;
     align-items: center;
 }
+
+h1 {
+    justify-content: center;
+}

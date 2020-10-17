@@ -5,7 +5,7 @@ const pool = require('../modules/pool')
 
 //GET
 router.get('/', (req, res)=>{
-    let queryText = `SELECT * FROM "tasks";`;
+    let queryText = `SELECT * FROM "tasks" ORDER BY "id";`;
     pool.query(queryText).then((result)=>{
         console.log('back from DB', result.rows);
         res.send(result.rows)
@@ -30,8 +30,16 @@ router.post('/', (req, res)=>{
 })
 
 //PUT
-router.put('/', (req, res)=>{
-    
+router.put('/:id', (req, res)=>{
+    let param = req.params.id
+    let queryText = `UPDATE "tasks" SET "completed" = TRUE WHERE "id" = $1;`
+    pool.query(queryText, [param]).then((result)=>{
+        console.log('in PUT pg',result );
+        res.sendStatus(200);
+    }).catch((err)=>{
+        console.log('error in PUT pg', err);
+        res.sendStatus(500);
+    })
 })
 
 //DELETe
