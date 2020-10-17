@@ -10,7 +10,10 @@ function onReady() {
 
 function addTask(){
     console.log('task added');
-    let task = $('#taskIn').val();
+    let task = {
+        name: $('#nameIn').val(),
+        description: $('#descriptionIn').val()
+    }
     console.log('task to be added', task);
     $.ajax({
         method: 'POST',
@@ -18,16 +21,19 @@ function addTask(){
         data: task
     }).then(function(response){
         console.log('back from server POST', response);
-        // getTask();
+        getTask();
     }).catch(function(err){
         console.log('error in POST server', error);
     })
+    //empty the input fields
+    $('#nameIn').val('');
+    $('#descriptionIn').val('');
 }// end addTask
 
 function getTask(){
     let el = $('#taskOutput');
     //Clear the dom 
-    // el.empty();
+    el.empty();
     $.ajax({
         method: 'GET',
         url: '/tasks'
@@ -46,4 +52,4 @@ function getTask(){
     }).catch(function(err){
         console.log('error in GET server', error);
     })
-}
+}//end getTask
