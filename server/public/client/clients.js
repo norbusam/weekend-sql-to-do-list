@@ -12,7 +12,12 @@ function onReady() {
 
 function addTask(){
     if($('#nameIn').val() == '' || $('#descriptionIn').val() == ''){
-        alert('Please add Task and description');
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Please fill out task and description'
+          })
+        return false;
     }
     console.log('task added');
     let task = {
@@ -56,6 +61,17 @@ function completeTask(){
 function deleteTask() {
     let taskId = $(this).closest('tr').data('id');
     console.log('deleted with the id of:', taskId);
+    Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!',
+            showLoaderOnConfirm: true,
+    
+    preConfirm: function() {
     $.ajax({
         method: 'DELETE',
         url: `/tasks/${taskId}`
@@ -64,7 +80,10 @@ function deleteTask() {
         getTask();
     }).catch(function(err){
         console.log('error getting in DELETE serer', err);
-    })//end ajax
+    
+    })//end ajax  
+}
+})// end swal 
 }//end deleteTask
 
 function getTask(){
