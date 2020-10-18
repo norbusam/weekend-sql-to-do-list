@@ -1,9 +1,20 @@
 # SQL todo app
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+duration- 6-8 hours
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+A to do CRUD app that keeps track of person/task name and on completion, gives a visual clue on DOM that the task is complete.
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+### Prerequisite
+- `npm install`(to install the dependencies)
+- a database name 'weekend-to-do-app'
+    - in database.sql there is table to create to work with this project.
+    - Couple of values to insert into database.
+
+## Technology use
+-express
+-PostgreSQL
+
+
+
