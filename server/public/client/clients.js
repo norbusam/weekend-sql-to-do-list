@@ -68,19 +68,22 @@ function deleteTask() {
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
-    }).then(
+            confirmButtonText: 'Yes, delete it!',
+            showLoaderOnConfirm: true,
+    
+    preConfirm: function() {
     $.ajax({
         method: 'DELETE',
         url: `/tasks/${taskId}`
     }).then(function(response){
         console.log('back from DELETE', response);
-
         getTask();
     }).catch(function(err){
         console.log('error getting in DELETE serer', err);
+    
     })//end ajax  
-    )   
+}
+})// end swal 
 }//end deleteTask
 
 function getTask(){
