@@ -9,8 +9,9 @@ function onReady() {
     $('#taskOutput').on('click', '.completed', completeTask);
     getTask();
 }// end onReady
-
+//Post routes
 function addTask(){
+    //Validation
     if($('#nameIn').val() == '' || $('#descriptionIn').val() == ''){
         Swal.fire({
             icon: 'error',
@@ -34,12 +35,12 @@ function addTask(){
         getTask();
     }).catch(function(err){
         console.log('error in POST server', error);
-    })
+    })//end ajax
     //empty the input fields
     $('#nameIn').val('');
     $('#descriptionIn').val('');
 }// end addTask
-
+//PUT routes
 function completeTask(){
     let taskId = $(this).closest('tr').data('id');
     let completedTask = $(this).data('complete')
@@ -55,9 +56,9 @@ function completeTask(){
         getTask();
     }).catch(function(err){
         console.log('error getting in PUT serer', err);
-    });
+    });//end ajax
 }// end completeTask
-
+//Delete
 function deleteTask() {
     let taskId = $(this).closest('tr').data('id');
     console.log('deleted with the id of:', taskId);
@@ -85,7 +86,7 @@ function deleteTask() {
 }
 })// end swal 
 }//end deleteTask
-
+//GET
 function getTask(){
     let el = $('#taskOutput');
     //Clear the dom 

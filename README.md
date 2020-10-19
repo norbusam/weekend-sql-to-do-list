@@ -1,10 +1,10 @@
 # SQL todo app
 
-duration- 6-8 hours
+duration- 5-6 hours
 
 ## Description
 
-A Todo CRUD app that keeps track of person/task name and on completion, gives a visual clue on DOM that the task is complete.
+A To-do CRUD app that keeps track of person/task name and on completion, gives a visual clue on DOM that the task is complete.
 
 ### Prerequisite
 - `npm install`(to install the dependencies)
@@ -12,9 +12,10 @@ A Todo CRUD app that keeps track of person/task name and on completion, gives a 
     - in database.sql there is table to create to work with this project.
     - Couple of values to insert into database.
 
-### Technology use
+### Technology used
 -express
 -PostgreSQL
+-Node.js
 
 
 

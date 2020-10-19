@@ -1,5 +1,5 @@
 --DB name
--- weekend-to-do-app
+`weekend-to-do-app`
 --create table
 CREATE TABLE "tasks"(
 "id" SERIAL PRIMARY KEY,
